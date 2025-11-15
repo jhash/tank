@@ -2,14 +2,11 @@ import { Link } from '@tanstack/react-router'
 
 import ClerkHeader from '../integrations/clerk/header-user.tsx'
 
-import TanChatAIAssistant from './example-AIAssistant.tsx'
-
 import { useState } from 'react'
 import {
   ChevronDown,
   ChevronRight,
   ClipboardType,
-  Database,
   Globe,
   Guitar,
   Home,
@@ -302,8 +299,6 @@ export default function Header() {
 
         <div className="p-4 border-t border-gray-700 bg-gray-800 flex flex-col gap-2">
           <ClerkHeader />
-
-          <TanChatAIAssistant />
         </div>
       </aside>
     </>

@@ -2,6 +2,7 @@ import {
   HeadContent,
   Scripts,
   createRootRouteWithContext,
+  ErrorComponent,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
@@ -45,6 +46,26 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
   }),
+
+  errorComponent: ({ error }) => {
+    // Log error to Cloudflare observability
+    if (typeof console !== 'undefined' && console.error) {
+      const errorInfo = {
+        message: error?.message || String(error),
+        stack: error?.stack || 'No stack trace available',
+        name: error?.name || 'Error',
+        route: '/',
+        timestamp: new Date().toISOString(),
+      }
+      console.error('[ROUTE ERROR]', JSON.stringify(errorInfo, null, 2))
+      console.error(`[ROUTE ERROR] ${errorInfo.name}: ${errorInfo.message}`)
+      if (errorInfo.stack && errorInfo.stack !== errorInfo.message) {
+        console.error('Stack trace:', errorInfo.stack)
+      }
+    }
+
+    return <ErrorComponent error={error} />
+  },
 
   shellComponent: RootDocument,
 })
