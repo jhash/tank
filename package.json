@@ -11,6 +11,7 @@
     "lint": "biome lint",
     "check": "biome check",
     "deploy": "wrangler deploy --outdir dist --upload-source-maps --var SENTRY_RELEASE:$(sentry-cli releases propose-version)",
+    "deploy:ci": "wrangler deploy --outdir dist",
     "start": "node --import ./dist/server/instrument.server.mjs dist/server/index.js",
     "sentry:sourcemaps": "_SENTRY_RELEASE=$(sentry-cli releases propose-version) && sentry-cli releases new $_SENTRY_RELEASE --org=jake-hash --project=tank && sentry-cli sourcemaps upload --org=jake-hash --project=tank --release=$_SENTRY_RELEASE --strip-prefix 'dist/..' dist",
     "postdeploy": "pnpm sentry:sourcemaps"
