@@ -11,6 +11,3 @@ count.txt
 .output
 .vinxi
 todos.json
-
-# Sentry Config File
-.sentryclirc

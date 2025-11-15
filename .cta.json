@@ -11,17 +11,6 @@
   "chosenAddOns": [
     "biome",
     "cloudflare",
-    "start",
-    "sentry",
-    "clerk",
-    "db",
-    "form",
-    "t3env",
-    "table",
-    "store",
-    "tanstack-query",
-    "compiler",
-    "convex",
-    "tanchat"
+    "start"
   ]
 }
