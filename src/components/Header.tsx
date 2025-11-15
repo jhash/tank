@@ -14,7 +14,7 @@ import {
   Guitar,
   Home,
   Menu,
-  MessagesSquare,
+  // MessagesSquare,
   Network,
   SquareFunction,
   StickyNote,
@@ -207,19 +207,6 @@ export default function Header() {
           </Link>
 
           <Link
-            to="/demo/db-chat"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Database size={20} />
-            <span className="font-medium">DB Chat</span>
-          </Link>
-
-          <Link
             to="/demo/form/simple"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
@@ -295,19 +282,6 @@ export default function Header() {
           >
             <Globe size={20} />
             <span className="font-medium">Convex</span>
-          </Link>
-
-          <Link
-            to="/demo/tanchat"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <MessagesSquare size={20} />
-            <span className="font-medium">Chat</span>
           </Link>
 
           <Link

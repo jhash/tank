@@ -9,5 +9,13 @@
     "VITE_CONVEX_URL": "https://famous-mosquito-162.convex.cloud",
     "CONVEX_DEPLOYMENT": "famous-mosquito-162",
     "VITE_SENTRY_DSN": "https://cea0aaeac3497006db22fc66f5e9e0ef@o4509356274745344.ingest.us.sentry.io/4510369952104448"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    }
   }
 }

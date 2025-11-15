@@ -11,11 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
-import { Route as DemoTanchatRouteImport } from './routes/demo/tanchat'
 import { Route as DemoTableRouteImport } from './routes/demo/table'
 import { Route as DemoStoreRouteImport } from './routes/demo/store'
-import { Route as DemoDbChatApiRouteImport } from './routes/demo/db-chat-api'
-import { Route as DemoDbChatRouteImport } from './routes/demo/db-chat'
 import { Route as DemoConvexRouteImport } from './routes/demo/convex'
 import { Route as DemoClerkRouteImport } from './routes/demo/clerk'
 import { Route as ExampleGuitarsIndexRouteImport } from './routes/example.guitars/index'
@@ -26,7 +23,6 @@ import { Route as DemoSentryTestingRouteImport } from './routes/demo/sentry.test
 import { Route as DemoFormSimpleRouteImport } from './routes/demo/form.simple'
 import { Route as DemoFormAddressRouteImport } from './routes/demo/form.address'
 import { Route as DemoApiTqTodosRouteImport } from './routes/demo/api.tq-todos'
-import { Route as DemoApiTanchatRouteImport } from './routes/demo/api.tanchat'
 import { Route as DemoApiNamesRouteImport } from './routes/demo/api.names'
 import { Route as DemoStartSsrIndexRouteImport } from './routes/demo/start.ssr.index'
 import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr.spa-mode'
@@ -43,11 +39,6 @@ const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
   path: '/demo/tanstack-query',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoTanchatRoute = DemoTanchatRouteImport.update({
-  id: '/demo/tanchat',
-  path: '/demo/tanchat',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DemoTableRoute = DemoTableRouteImport.update({
   id: '/demo/table',
   path: '/demo/table',
@@ -56,16 +47,6 @@ const DemoTableRoute = DemoTableRouteImport.update({
 const DemoStoreRoute = DemoStoreRouteImport.update({
   id: '/demo/store',
   path: '/demo/store',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoDbChatApiRoute = DemoDbChatApiRouteImport.update({
-  id: '/demo/db-chat-api',
-  path: '/demo/db-chat-api',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoDbChatRoute = DemoDbChatRouteImport.update({
-  id: '/demo/db-chat',
-  path: '/demo/db-chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoConvexRoute = DemoConvexRouteImport.update({
@@ -118,11 +99,6 @@ const DemoApiTqTodosRoute = DemoApiTqTodosRouteImport.update({
   path: '/demo/api/tq-todos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoApiTanchatRoute = DemoApiTanchatRouteImport.update({
-  id: '/demo/api/tanchat',
-  path: '/demo/api/tanchat',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DemoApiNamesRoute = DemoApiNamesRouteImport.update({
   id: '/demo/api/names',
   path: '/demo/api/names',
@@ -153,14 +129,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/demo/clerk': typeof DemoClerkRoute
   '/demo/convex': typeof DemoConvexRoute
-  '/demo/db-chat': typeof DemoDbChatRoute
-  '/demo/db-chat-api': typeof DemoDbChatApiRoute
   '/demo/store': typeof DemoStoreRoute
   '/demo/table': typeof DemoTableRoute
-  '/demo/tanchat': typeof DemoTanchatRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/api/tanchat': typeof DemoApiTanchatRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -178,14 +150,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/demo/clerk': typeof DemoClerkRoute
   '/demo/convex': typeof DemoConvexRoute
-  '/demo/db-chat': typeof DemoDbChatRoute
-  '/demo/db-chat-api': typeof DemoDbChatApiRoute
   '/demo/store': typeof DemoStoreRoute
   '/demo/table': typeof DemoTableRoute
-  '/demo/tanchat': typeof DemoTanchatRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/api/tanchat': typeof DemoApiTanchatRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -204,14 +172,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/demo/clerk': typeof DemoClerkRoute
   '/demo/convex': typeof DemoConvexRoute
-  '/demo/db-chat': typeof DemoDbChatRoute
-  '/demo/db-chat-api': typeof DemoDbChatApiRoute
   '/demo/store': typeof DemoStoreRoute
   '/demo/table': typeof DemoTableRoute
-  '/demo/tanchat': typeof DemoTanchatRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/api/tanchat': typeof DemoApiTanchatRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -231,14 +195,10 @@ export interface FileRouteTypes {
     | '/'
     | '/demo/clerk'
     | '/demo/convex'
-    | '/demo/db-chat'
-    | '/demo/db-chat-api'
     | '/demo/store'
     | '/demo/table'
-    | '/demo/tanchat'
     | '/demo/tanstack-query'
     | '/demo/api/names'
-    | '/demo/api/tanchat'
     | '/demo/api/tq-todos'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -256,14 +216,10 @@ export interface FileRouteTypes {
     | '/'
     | '/demo/clerk'
     | '/demo/convex'
-    | '/demo/db-chat'
-    | '/demo/db-chat-api'
     | '/demo/store'
     | '/demo/table'
-    | '/demo/tanchat'
     | '/demo/tanstack-query'
     | '/demo/api/names'
-    | '/demo/api/tanchat'
     | '/demo/api/tq-todos'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -281,14 +237,10 @@ export interface FileRouteTypes {
     | '/'
     | '/demo/clerk'
     | '/demo/convex'
-    | '/demo/db-chat'
-    | '/demo/db-chat-api'
     | '/demo/store'
     | '/demo/table'
-    | '/demo/tanchat'
     | '/demo/tanstack-query'
     | '/demo/api/names'
-    | '/demo/api/tanchat'
     | '/demo/api/tq-todos'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -307,14 +259,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DemoClerkRoute: typeof DemoClerkRoute
   DemoConvexRoute: typeof DemoConvexRoute
-  DemoDbChatRoute: typeof DemoDbChatRoute
-  DemoDbChatApiRoute: typeof DemoDbChatApiRoute
   DemoStoreRoute: typeof DemoStoreRoute
   DemoTableRoute: typeof DemoTableRoute
-  DemoTanchatRoute: typeof DemoTanchatRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
-  DemoApiTanchatRoute: typeof DemoApiTanchatRoute
   DemoApiTqTodosRoute: typeof DemoApiTqTodosRoute
   DemoFormAddressRoute: typeof DemoFormAddressRoute
   DemoFormSimpleRoute: typeof DemoFormSimpleRoute
@@ -345,13 +293,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemoTanstackQueryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/tanchat': {
-      id: '/demo/tanchat'
-      path: '/demo/tanchat'
-      fullPath: '/demo/tanchat'
-      preLoaderRoute: typeof DemoTanchatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/demo/table': {
       id: '/demo/table'
       path: '/demo/table'
@@ -364,20 +305,6 @@ declare module '@tanstack/react-router' {
       path: '/demo/store'
       fullPath: '/demo/store'
       preLoaderRoute: typeof DemoStoreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/db-chat-api': {
-      id: '/demo/db-chat-api'
-      path: '/demo/db-chat-api'
-      fullPath: '/demo/db-chat-api'
-      preLoaderRoute: typeof DemoDbChatApiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/db-chat': {
-      id: '/demo/db-chat'
-      path: '/demo/db-chat'
-      fullPath: '/demo/db-chat'
-      preLoaderRoute: typeof DemoDbChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/convex': {
@@ -450,13 +377,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemoApiTqTodosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/api/tanchat': {
-      id: '/demo/api/tanchat'
-      path: '/demo/api/tanchat'
-      fullPath: '/demo/api/tanchat'
-      preLoaderRoute: typeof DemoApiTanchatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/demo/api/names': {
       id: '/demo/api/names'
       path: '/demo/api/names'
@@ -499,14 +419,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DemoClerkRoute: DemoClerkRoute,
   DemoConvexRoute: DemoConvexRoute,
-  DemoDbChatRoute: DemoDbChatRoute,
-  DemoDbChatApiRoute: DemoDbChatApiRoute,
   DemoStoreRoute: DemoStoreRoute,
   DemoTableRoute: DemoTableRoute,
-  DemoTanchatRoute: DemoTanchatRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
-  DemoApiTanchatRoute: DemoApiTanchatRoute,
   DemoApiTqTodosRoute: DemoApiTqTodosRoute,
   DemoFormAddressRoute: DemoFormAddressRoute,
   DemoFormSimpleRoute: DemoFormSimpleRoute,

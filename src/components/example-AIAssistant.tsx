@@ -9,9 +9,6 @@ import rehypeSanitize from 'rehype-sanitize'
 import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
 
-import { useChat } from '@ai-sdk/react'
-import { DefaultChatTransport } from 'ai'
-
 import GuitarRecommendation from './example-GuitarRecommendation'
 
 import type { UIMessage } from 'ai'
@@ -97,11 +94,6 @@ function Messages({ messages }: { messages: Array<UIMessage> }) {
 
 export default function AIAssistant() {
   const isOpen = useStore(showAIAssistant)
-  const { messages, sendMessage } = useChat({
-    transport: new DefaultChatTransport({
-      api: '/demo/api/tanchat',
-    }),
-  })
   const [input, setInput] = useState('')
 
   return (
